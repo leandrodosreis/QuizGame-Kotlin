@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.quix_kotlin.home.HomeScreen
+import com.example.quix_kotlin.quiz.QuizScreen
 import com.example.quix_kotlin.ui.theme.QuixKotlinTheme
 
 class MainActivity : ComponentActivity() {
@@ -35,6 +36,11 @@ class MainActivity : ComponentActivity() {
                                 modifier = Modifier.padding(innerPadding),
                                 navController = navController
                             )
+                        }
+
+                        composable(route = "quiz"){
+                            QuizScreen(modifier = Modifier.padding(innerPadding),
+                                navController = navController)
                         }
                     }
 
