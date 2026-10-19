@@ -33,7 +33,12 @@ fun QuizScreen(modifier: Modifier = Modifier, navController: NavHostController) 
                 contentDescription = "quiz",
                 modifier = Modifier.size(80.dp))
 
-            CardQuestoes()
+            CardQuestoes(
+                modifier = TODO(),
+                navController = TODO()
+            )
+            
+            
         }
     }
 }

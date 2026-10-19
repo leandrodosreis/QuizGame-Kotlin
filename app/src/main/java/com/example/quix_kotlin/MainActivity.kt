@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.quix_kotlin.home.HomeScreen
 import com.example.quix_kotlin.quiz.QuizScreen
+import com.example.quix_kotlin.resultado.RestadoScreen
 import com.example.quix_kotlin.ui.theme.QuixKotlinTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,6 +41,11 @@ class MainActivity : ComponentActivity() {
 
                         composable(route = "quiz"){
                             QuizScreen(modifier = Modifier.padding(innerPadding),
+                                navController = navController)
+                        }
+
+                        composable(route = "resultado"){
+                            RestadoScreen(modifier = Modifier.padding(innerPadding),
                                 navController = navController)
                         }
                     }

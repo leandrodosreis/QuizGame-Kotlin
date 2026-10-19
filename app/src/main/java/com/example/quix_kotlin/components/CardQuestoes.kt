@@ -17,9 +17,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
-fun CardQuestoes(modifier: Modifier = Modifier) {
+fun CardQuestoes(modifier: Modifier = Modifier, navController: NavController) {
+
+    val score = 0
+
     Card(
         modifier = Modifier
             .height(50.dp)
@@ -54,7 +58,7 @@ fun CardQuestoes(modifier: Modifier = Modifier) {
             )
 
             Button(
-                onClick = {},
+                onClick = { score +1 },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(248, 222, 89)
                 )
@@ -66,7 +70,7 @@ fun CardQuestoes(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = {},
+                onClick = {score+0},
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(248, 222, 89)
                 )
@@ -78,7 +82,7 @@ fun CardQuestoes(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = {},
+                onClick = {score+0},
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(248, 222, 89)
                 )
@@ -90,7 +94,7 @@ fun CardQuestoes(modifier: Modifier = Modifier) {
             }
 
             Button(
-                onClick = {},
+                onClick = {score+0},
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(248, 222, 89)
                 )
