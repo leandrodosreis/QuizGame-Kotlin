@@ -11,9 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.quix_kotlin.home.HomeScreen
-import com.example.quix_kotlin.quiz.QuizScreen
-import com.example.quix_kotlin.resultado.RestadoScreen
+import com.example.quix_kotlin.resultado.ResultadoScreen
 import com.example.quix_kotlin.ui.theme.QuixKotlinTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,23 +29,16 @@ class MainActivity : ComponentActivity() {
 
                     ){
                         composable(
-                            route = "home"
-                        ){
-                            HomeScreen(
+                            route = "resultado?pontos={pontos}"
+                        ) { backStackEntry ->
+                            val pontos = backStackEntry.arguments?.getString("pontos")?.toIntOrNull() ?: 0
+                            ResultadoScreen(
                                 modifier = Modifier.padding(innerPadding),
-                                navController = navController
+                                navController = navController,
+                                pontuacao = pontos // Passe essa nova propriedade para sua tela de resultado usar
                             )
                         }
 
-                        composable(route = "quiz"){
-                            QuizScreen(modifier = Modifier.padding(innerPadding),
-                                navController = navController)
-                        }
-
-                        composable(route = "resultado"){
-                            RestadoScreen(modifier = Modifier.padding(innerPadding),
-                                navController = navController)
-                        }
                     }
 
                 }
